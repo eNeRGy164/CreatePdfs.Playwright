@@ -41,6 +41,9 @@ outputFile.Write(templateHtml!
 );
 outputFile.Close();
 
+// The output path for the generated PDF file
+var pdfPath = outputPath.Replace(".html", ".pdf");
+
 // Create a new browser page
 var page = await browser.NewPageAsync();
 
@@ -54,12 +57,11 @@ await page.PdfAsync(new PagePdfOptions()
     Landscape = false, // Use portrait orientation
     PreferCSSPageSize = true, // Use CSS-defined page size
     Tagged = true, // Enable tagged PDF for accessibility
-    Path = outputPath.Replace(".html", ".pdf"), // Define the output path for the PDF
+    Path = pdfPath, // Define the output path for the PDF
     Outline = true, // Include an outline (bookmarks) in the PDF
 });
 
 // Open the generated PDF file using the default PDF viewer
-var pdfPath = outputPath.Replace(".html", ".pdf");
 Process.Start(new ProcessStartInfo
 {
     FileName = pdfPath,
