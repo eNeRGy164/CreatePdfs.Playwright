@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>{{title}}</title> <!-- Placeholder for the title, dynamically replaced in the code -->
+  <style>
+    /* Define styles for the PDF generation */
+    @page {
+      size: A4; /* Set the page size to A4 */
+      margin: 2cm; /* Set a 2cm margin around the page */
+
+      /* Define content for the header and footer */
+      @top-center {
+        content: "Page Header"; /* Display "Page Header" at the top center of each page */
+      }
+
+      @bottom-right {
+        content: counter(page) " of " counter(pages); /* Display the current page number and total pages at the bottom right */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>PDF Generation Demo</h1>
+  <p>
+    {{body}} <!-- Placeholder for the body content, dynamically replaced in the code -->
+  </p>
+  <p>
+    <address>https://blog.hompus.nl</address>
+  </p>
+</body>
+</html>

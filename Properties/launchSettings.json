@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CreatePdfs.Playwright": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
